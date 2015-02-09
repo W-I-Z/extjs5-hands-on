@@ -9,7 +9,9 @@ Ext.define('ExtBoard.Application', {
     name: 'ExtBoard',
 
     stores: [
-        // TODO: add global / shared stores here
+        'Categories',
+        'Threads',
+        'Contents'
     ],
     
     launch: function () {
