@@ -40,14 +40,16 @@ Ext.define('ExtBoard.view.category.list.PanelController', {
     },
 
     onSelectCategory: function() {
-        var me = this,
-            enabled = false;
-        if (me.lookupReference('listView').getSelectionModel().getSelection().length > 0) {
-            enabled = true;
-        }
         this.getViewModel().setData({
-            'enableEditButton': enabled,
-            'enableDeleteButton': enabled
+            'enableEditButton': true,
+            'enableDeleteButton': true
+        });
+    },
+
+    onDeselectCategory: function() {
+        this.getViewModel().setData({
+            'enableEditButton': false,
+            'enableDeleteButton': false
         });
     },
 

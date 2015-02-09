@@ -23,18 +23,18 @@ Ext.define('ExtBoard.view.category.list.Panel', {
     tbar: {
         items: [
             {
-                text: 'add',
+                glyph: 'xf067@FontAwesome',
                 handler: 'onClickAdd'
             },
             {
-                text: 'edit',
+                glyph: 'xf044@FontAwesome',
                 handler: 'onClickEdit',
                 bind: {
                     disabled: '{!enableEditButton}'
                 }
             },
             {
-                text: 'delete',
+                glyph: 'xf00d@FontAwesome',
                 handler: 'onClickDelete',
                 bind: {
                     disabled: '{!enableDeleteButton}'
@@ -49,6 +49,7 @@ Ext.define('ExtBoard.view.category.list.Panel', {
             reference: 'listView',
             listeners: {
                 select: 'onSelectCategory',
+                deselect: 'onDeselectCategory',
                 scope: 'controller'
             }
         }

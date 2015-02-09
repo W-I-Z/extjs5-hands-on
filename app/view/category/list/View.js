@@ -10,11 +10,17 @@ Ext.define('ExtBoard.view.category.list.View', {
 
     store: 'Categories',
 
+    baseCls: Ext.baseCSSPrefix + 'category-list-view',
+
+    itemSelector: '.list-item',
+    selectionModel: {
+        allowDeselect: false,
+        mode: 'SINGLE'
+    },
+
     tpl: [
         '<tpl for=".">',
-            '<div class="category-item">{name}</div>',
+            '<div class="list-item">{name}</div>',
         '</tpl>'
-    ],
-
-    itemSelector: '.category-item'
+    ]
 });

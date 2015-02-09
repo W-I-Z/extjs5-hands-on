@@ -26,7 +26,7 @@ Ext.define('ExtBoard.view.category.create.Form', {
 
     buttons: [
         {
-            text: 'Submit',
+            text: '登録',
             formBind: true,
             disabled: true,
             handler: 'onClickSubmit'

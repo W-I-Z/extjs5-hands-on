@@ -1,0 +1,13 @@
+.#{$prefix}category-list-view {
+    .list-item {
+        padding: 10px;
+
+        &:hover {
+            background-color: $red50;
+        }
+        &.#{$prefix}item-selected {
+            border: 0;
+            background-color: $red100;
+        }
+    }
+}
