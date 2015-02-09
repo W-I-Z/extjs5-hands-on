@@ -14,14 +14,19 @@ Ext.define('ExtBoard.view.category.create.WindowController', {
 
     onClickSubmit: function() {
         var me = this,
-            form = me.lookupReference('categoryCreateForm');
+            form = me.lookupReference('categoryCreateForm'),
+            record;
 
         if (!form.isValid()) {
             // バリデーションエラー
             return;
         }
 
-        Ext.getStore('Categories').add(form.getValues());
+        form.updateRecord();
+        record = form.getRecord();
+        if (!Ext.isDefined(record.store)) {
+            Ext.getStore('Categories').add(record);
+        }
         me.getView().hide();
     }
 

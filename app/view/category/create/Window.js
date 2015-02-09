@@ -24,6 +24,11 @@ Ext.define('ExtBoard.view.category.create.Window', {
             xtype: 'categoryCreateForm',
             reference: 'categoryCreateForm'
         }
-    ]
+    ],
+
+    setRecord: function(record) {
+        var me = this;
+        me.lookupReference('categoryCreateForm').loadRecord(record);
+    }
 
 });

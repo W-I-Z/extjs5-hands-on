@@ -26,11 +26,8 @@ Ext.define('ExtBoard.view.category.create.Form', {
 
     buttons: [
         {
-            text: 'Reset'
-        },
-        {
             text: 'Submit',
-            formBind: true, //only enabled once the form is valid
+            formBind: true,
             disabled: true,
             handler: 'onClickSubmit'
         }
