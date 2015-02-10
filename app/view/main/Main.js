@@ -10,7 +10,8 @@ Ext.define('ExtBoard.view.main.Main', {
     requires: [
         'ExtBoard.view.main.MainController',
         'ExtBoard.view.main.MainModel',
-        'ExtBoard.view.category.list.Panel'
+        'ExtBoard.view.category.list.Panel',
+        'ExtBoard.view.thread.list.Panel'
     ],
 
     xtype: 'app-main',
@@ -21,7 +22,11 @@ Ext.define('ExtBoard.view.main.Main', {
     },
 
     layout: {
-        type: 'border'
+        type: 'border',
+        regionWeights: {
+            west: 20,
+            north: 10
+        }
     },
 
     items: [
@@ -30,6 +35,12 @@ Ext.define('ExtBoard.view.main.Main', {
             xtype: 'categoryListPanel',
             split: true,
             width: 250
+        },
+        {
+            region: 'north',
+            xtype: 'threadListPanel',
+            split: true,
+            height: 400
         },
         {
             region: 'center',

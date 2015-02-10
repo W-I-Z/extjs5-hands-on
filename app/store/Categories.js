@@ -15,10 +15,10 @@ Ext.define('ExtBoard.store.Categories', {
     },
 
     data: [
-        {name: 'category1'},
-        {name: 'category2'},
-        {name: 'category3'},
-        {name: 'category4'},
-        {name: 'category5'}
+        {id: 1, name: 'category1'},
+        {id: 2, name: 'category2'},
+        {id: 3, name: 'category3'},
+        {id: 4, name: 'category4'},
+        {id: 5, name: 'category5'}
     ]
 });

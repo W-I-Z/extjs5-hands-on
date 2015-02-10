@@ -8,10 +8,12 @@ Ext.define('ExtBoard.Application', {
     
     name: 'ExtBoard',
 
+    controllers: [
+        'Main'
+    ],
+
     stores: [
-        'Categories',
-        'Threads',
-        'Contents'
+        'Categories'
     ],
     
     launch: function () {

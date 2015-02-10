@@ -2,10 +2,14 @@
  * カテゴリモデルクラス。
  *
  * @class ExtBoard.model.Category
- * @extend Ext.data.Model
+ * @extend ExtBoard.model.Base
  */
 Ext.define('ExtBoard.model.Category', {
-    extend: 'Ext.data.Model',
+    extend: 'ExtBoard.model.Base',
+
+    requires: [
+        'ExtBoard.model.Thread'
+    ],
 
     fields: [
         {name: 'id', type: 'int'},
@@ -13,10 +17,5 @@ Ext.define('ExtBoard.model.Category', {
         {name: 'created', type: 'date'},
         {name: 'updated', type: 'date'},
         {name: 'deleted', type: 'date'}
-    ],
-
-    proxy: {
-        type: 'localstorage',
-        id: 'category'
-    }
+    ]
 });

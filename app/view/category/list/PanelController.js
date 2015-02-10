@@ -39,11 +39,14 @@ Ext.define('ExtBoard.view.category.list.PanelController', {
         Ext.getStore('Categories').remove(records[0]);
     },
 
-    onSelectCategory: function() {
-        this.getViewModel().setData({
+    onSelectCategory: function(selection, record) {
+        var me = this;
+        me.getViewModel().setData({
             'enableEditButton': true,
             'enableDeleteButton': true
         });
+
+        me.redirectTo(record.getId());
     },
 
     onDeselectCategory: function() {
