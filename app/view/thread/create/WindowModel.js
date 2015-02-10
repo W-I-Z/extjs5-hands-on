@@ -8,6 +8,10 @@ Ext.define('ExtBoard.view.thread.create.WindowModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.threadCreateWindow',
 
+    /**
+     * スレッドストアをセットする。
+     * @param threads スレッドストア
+     */
     setThreadsStore: function(threads) {
         var me = this;
 

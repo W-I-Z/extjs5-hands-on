@@ -19,5 +19,10 @@ Ext.define('ExtBoard.model.Thread', {
         {name: 'created', type: 'date'},
         {name: 'updated', type: 'date'},
         {name: 'deleted', type: 'date'}
-    ]
+    ],
+
+    proxy: {
+        type: 'localstorage',
+        id: 'thread'
+    }
 });

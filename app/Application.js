@@ -15,8 +15,8 @@ Ext.define('ExtBoard.Application', {
     stores: [
         'Categories'
     ],
-    
+
     launch: function () {
-        // TODO - Launch the application
+        this.getCategoriesStore().load();
     }
 });

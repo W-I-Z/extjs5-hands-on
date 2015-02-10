@@ -13,10 +13,17 @@ Ext.define('ExtBoard.view.thread.list.PanelController', {
         'ExtBoard.model.Thread'
     ],
 
+    /**
+     * 登録ボタンクリックのイベントリスナー。
+     */
     onClickAdd: function() {
+        // 新規の登録フォームウィンドウを表示する
         this.showCreateWindow(ExtBoard.model.Thread.create());
     },
 
+    /**
+     * 編集ボタンクリックのイベントリスナー。
+     */
     onClickEdit: function() {
         var me = this,
             records = me.getView().getSelectionModel().getSelection();
@@ -25,9 +32,13 @@ Ext.define('ExtBoard.view.thread.list.PanelController', {
             return;
         }
 
+        // 選択されているスレッドの登録フォームウィンドウを表示する
         me.showCreateWindow(records[0]);
     },
 
+    /**
+     * 削除ボタンクリックのイベントリスナー。
+     */
     onClickDelete: function() {
         var me = this,
             view = me.getView(),
@@ -37,9 +48,14 @@ Ext.define('ExtBoard.view.thread.list.PanelController', {
             return;
         }
 
-        view.getStore().remove(records[0]);
+        records[0].erase();
     },
 
+    /**
+     * selectイベントリスナー。
+     * @param selection
+     * @param record
+     */
     onSelectThread: function(selection, record) {
         var me = this;
         me.getViewModel().setData({
@@ -50,6 +66,10 @@ Ext.define('ExtBoard.view.thread.list.PanelController', {
         //me.redirectTo(record.getId());
     },
 
+    /**
+     * 登録フォームウィンドウを表示する。
+     * @param record スレッド
+     */
     showCreateWindow: function(record) {
         var window = Ext.widget('threadCreateWindow');
         window.setRecord(record);

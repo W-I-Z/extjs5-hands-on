@@ -15,5 +15,10 @@ Ext.define('ExtBoard.model.Content', {
         {name: 'created', type: 'date'},
         {name: 'updated', type: 'date'},
         {name: 'deleted', type: 'date'}
-    ]
+    ],
+
+    proxy: {
+        type: 'localstorage',
+        id: 'content'
+    }
 });
